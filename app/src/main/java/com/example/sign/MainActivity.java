@@ -36,6 +36,8 @@ public class MainActivity extends Activity {
         txtEmail = (TextView) findViewById(R.id.email);
         btnLogout = (Button) findViewById(R.id.btnLogout);
 
+        //String nam = text;
+
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
