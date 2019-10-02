@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import app.R;
+import com.example.sign.R;
 import app.AppConfig;
 import app.AppController;
 import helper.SQLiteHandler;

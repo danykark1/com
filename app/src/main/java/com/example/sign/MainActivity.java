@@ -10,7 +10,7 @@ import helper.SQLiteHandler;
 import helper.SessionManager;
 import activity.LoginActivity;
 import java.util.HashMap;
-import app.R;
+import com.example.sign.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
