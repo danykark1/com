@@ -23,6 +23,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.sign.Menu;
 import com.example.sign.R;
 import app.AppConfig;
 import app.AppController;
@@ -62,7 +63,7 @@ public class LoginActivity extends Activity {
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, Menu.class);
             startActivity(intent);
             finish();
         }
@@ -143,7 +144,7 @@ public class LoginActivity extends Activity {
 
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
-                                MainActivity.class);
+                                Menu.class);
                         startActivity(intent);
                         finish();
                     } else {
