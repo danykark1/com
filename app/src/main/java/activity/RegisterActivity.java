@@ -3,7 +3,7 @@ package activity;
 
 
 import android.app.Activity;
-import com.example.sign.MainActivity;
+import com.example.sign.MainActivity_imported;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,7 +66,7 @@ public class RegisterActivity extends Activity {
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
             Intent intent = new Intent(RegisterActivity.this,
-                    MainActivity.class);
+                    MainActivity_imported.class);
             startActivity(intent);
             finish();
         }

@@ -4,6 +4,11 @@
     android:versionCode="1"
     android:versionName="1.0">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera2"/>
+    <uses-feature android:name="android.hardware.camera2.autofoucs"/>
+
+
     <application
         android:name="app.AppController"
         android:allowBackup="true"
@@ -11,14 +16,24 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Stock"></activity>
+<!--        <activity android:name=".Barcode_scanner"></activity>-->
+        <activity android:name=".MenuActivity_test" /> <!-- <activity android:name="com.stock.StockEntry"></activity> -->
         <activity
             android:name=".Menu"
             android:label="MENU"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" /> <!-- <activity -->
+<!--         android:name="activity.LoginActivity" -->
+<!--         android:label="@string/app_name" -->
+<!--         android:launchMode="singleTop" -->
+<!--         android:windowSoftInputMode="adjustPan"> -->
+<!--         <intent-filter> -->
+<!--         <action android:name="android.intent.action.MAIN" /> -->
+<!--         <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--         </intent-filter> -->
+<!--         </activity> -->
         <activity
-            android:name="activity.LoginActivity"
+            android:name="com.stock.StockEntry"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan">
@@ -34,7 +49,15 @@
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity_imported"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Barcode_scanner"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="activity.LoginActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop" />
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/colorPrimaryDark"
+    tools:context=".Barcode_scanner"
+    android:orientation="vertical">
+
+        <Button
+        android:id="@+id/btn_qrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="100dp"
+        android:textColor="@color/bar_code_black"
+        android:text="Scan QR/Barcode"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="164dp"
+        android:background="@color/qr_codescanner"/>
+
+<!--    <me.dm7.barcodescanner.zxing.ZXingScannerView-->
+<!--        android:id="@+id/zxscan"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp">-->
+
+<!--    </me.dm7.barcodescanner.zxing.ZXingScannerView>-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scanerView"
+        android:layout_marginTop="25dp"/>
+
+</LinearLayout>
