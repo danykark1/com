@@ -3,7 +3,8 @@ package app;
 public class ProductDetailsSubmited {
     private String brand;
     private String model;
-    private String id;
+    private String imei;
+    private String p_id;
     private String buying_price;
     private String selling_price;
     private String date_entered;
@@ -26,11 +27,11 @@ public class ProductDetailsSubmited {
     }
 
     public String getId() {
-        return id;
+        return p_id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.p_id = id;
     }
 
     public String getBuying_price() {
@@ -55,5 +56,13 @@ public class ProductDetailsSubmited {
 
     public void setDate_entered(String date_entered) {
         this.date_entered = date_entered;
+    }
+
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
     }
 }

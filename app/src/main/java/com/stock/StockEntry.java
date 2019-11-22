@@ -58,6 +58,8 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
     List p_detail_list;
     StringRequest strReq;
 
+    String productJsonTosubmit;
+    String p_brands, p_mode, p_branch_name, p_product_price, p_sellingprice, p_status, dateEntered, p_imei;
 
     private Boolean isOkClicked;
 
@@ -77,13 +79,13 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
         brand = (MaterialBetterSpinner) findViewById(R.id.brand_spinner);
         model = (MaterialBetterSpinner) findViewById(R.id.model_spinner);
         imei = (TextView) findViewById(R.id.imei_view);
-        dateSelected = (TextView) findViewById(R.id.selectedDate);
-        brach_name = (TextInputEditText) findViewById(R.id.id_branch_name);
+//        dateSelected = (TextView) findViewById(R.id.selectedDate);
+//        brach_name = (TextInputEditText) findViewById(R.id.id_branch_name);
         product_price = (TextInputEditText) findViewById(R.id.product_price);
         selling_price = (TextInputEditText) findViewById(R.id.selling_price);
-        product_status = (TextInputEditText) findViewById(R.id.product_status);
-        submit = (Button)findViewById(R.id.btn_submit);
-        btn_date_picker = (Button) findViewById(R.id.date_picker);
+//        product_status = (TextInputEditText) findViewById(R.id.product_status);
+        submit = (Button) findViewById(R.id.btn_submit);
+//        btn_date_picker = (Button) findViewById(R.id.date_picker);
 
 
         pDialog = new ProgressDialog(this);
@@ -102,10 +104,10 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
         final String tag_string_req = "Details";
         Log.d("am testi", imei.getText().toString());
 
-        if(strReq !=null){
+        if (strReq != null) {
 
         }
-                strReq = new StringRequest(Request.Method.GET,
+        strReq = new StringRequest(Request.Method.GET,
                 AppConfig.P_DETAILS_LOGIN, new Response.Listener<String>() {
 
 
@@ -135,7 +137,6 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
                 model.setAdapter(model_dataAdapter);
 
 
-
 //                submitDetails(brand,model, brach_name, product_price, selling_price, product_status);
 
             }
@@ -163,7 +164,6 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
         model.setAdapter(model_dataAdapter);
 
 
-
         calendar = Calendar.getInstance();
 
         Year = calendar.get(Calendar.YEAR);
@@ -171,43 +171,44 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
         Day = calendar.get(Calendar.DAY_OF_MONTH);
 //        Log.d("year", Year)
 
-        btn_date_picker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                datePickerDialog = DatePickerDialog.newInstance(StockEntry.this, Year, Month + 1, Day);
-
-                datePickerDialog.setThemeDark(false);
-
-                datePickerDialog.showYearPickerFirst(false);
-
-                datePickerDialog.setAccentColor(Color.parseColor("#009688"));
-
-                datePickerDialog.setTitle("Select Date From DatePickerDialog");
-
-                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
-
-                onDateSet(datePickerDialog, Year, Month + 1, Day);
-            }
-        });
+//        btn_date_picker.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                datePickerDialog = DatePickerDialog.newInstance(StockEntry.this, Year, Month + 1, Day);
+//
+//                datePickerDialog.setThemeDark(false);
+//
+//                datePickerDialog.showYearPickerFirst(false);
+//
+//                datePickerDialog.setAccentColor(Color.parseColor("#009688"));
+//
+//                datePickerDialog.setTitle("Select Date From DatePickerDialog");
+//
+//                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+//
+////                onDateSet(datePickerDialog, Year, Month + 1, Day);
+//            }
+//        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String p_brands, p_mode, p_branch_name, p_product_price, p_sellingprice, p_status,dateEntered;
+
 
                 p_brands = brand.getText().toString();
                 p_mode = model.getText().toString();
-                p_branch_name = brach_name.getText().toString();
+                p_imei = imei.getText().toString();
+//                p_branch_name = brach_name.getText().toString();
                 p_product_price = product_price.getText().toString();
                 p_sellingprice = selling_price.getText().toString();
-                p_status = product_status.getText().toString();
-                dateEntered = dateSelected.getText().toString();
+//                p_status = product_status.getText().toString();
+//                dateEntered = dateSelected.getText().toString();
 
                 //Json String Object
-                String productJsonTosubmit = getJsonString(p_brands,p_mode,p_product_price,p_sellingprice,dateEntered);
+                productJsonTosubmit = getJsonString(p_brands,p_mode,p_imei, p_product_price, p_sellingprice);
 
-                Log.e(TAG, "Request completed onclick: "+productJsonTosubmit);
+                Log.e(TAG, "Request completed onclick: " + productJsonTosubmit);
 
 //                String jj = p_brands + " "+p_mode+" "+p_branch_name+" "+p_product_price+
 //                        " "+p_sellingprice+" "+p_status+" "+dateEntered;
@@ -219,16 +220,14 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
 
 
                 StringRequest product_details = new StringRequest(Request.Method.POST, AppConfig.P_DETAILS_LOCAL,
-                        new Response.Listener<String>()
-                        {
+                        new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 // response
                                 Log.d("Local Response", response);
                             }
                         },
-                        new Response.ErrorListener()
-                        {
+                        new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // error
@@ -237,14 +236,13 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
                         }
                 ) {
                     @Override
-                    protected Map<String, String> getParams()
-                    {
+                    protected Map<String, String> getParams() {
 
-                        Map<String, String>  params = new HashMap<String, String>();
-                        params.put("imei", "wtwetwqet");
-                        params.put("buying_price", "500");
-                        params.put("selling_price", "800");
-                        params.put("entry_date", "12/11/2019");
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("imei", p_imei);
+                        params.put("buying_price", p_product_price);
+                        params.put("selling_price", p_sellingprice);
+//                        params.put("entry_date", dateEntered);
 
                         return params;
                     }
@@ -282,27 +280,34 @@ public class StockEntry extends AppCompatActivity implements DatePickerDialog.On
     public void setP_detail_list(List p_detail_list) {
         this.p_detail_list = p_detail_list;
     }
-    public String getJsonString(String brand, String model, String buying_price, String selling_price, String dateEntered){
+
+    public String getJsonString(String brand, String model, String imei , String buying_price, String selling_price) {
         ProductDetailsSubmited prodct_details = new ProductDetailsSubmited();
         prodct_details.setBrand(brand);
         prodct_details.setModel(model);
+        prodct_details.setImei(imei);
         prodct_details.setBuying_price(buying_price);
         prodct_details.setSelling_price(selling_price);
-        prodct_details.setDate_entered(dateEntered);
+//        prodct_details.setDate_entered(dateEntered);
 
         List product_list = getP_detail_list();
         Gson gson = new Gson();
-        for (Object obj : product_list) {
-            ProductDetail individual_prd = new ProductDetail();
-            individual_prd = gson.fromJson(obj.toString(), ProductDetail.class);
+        String productJsonString = null;
+        if(null != product_list) {
+            for (Object obj : product_list) {
+                ProductDetail individual_prd = new ProductDetail();
+                individual_prd = gson.fromJson(obj.toString(), ProductDetail.class);
 
-            if(prodct_details.getModel().equals(individual_prd.getP_model())){
-                prodct_details.setId(individual_prd.getP_id());
+                if (prodct_details.getModel().equals(individual_prd.getP_model())) {
+                    prodct_details.setId(individual_prd.getP_id());
+                }
+
             }
-
+            prodct_details.setModel(null);
+            prodct_details.setBrand(null);
+            Log.e(TAG, "Product Id matching model: " + prodct_details.getId());
+                productJsonString = gson.toJson(prodct_details);
         }
-        Log.e(TAG, "Product Id matching model: " + prodct_details.getId());
-        String productJsonString = gson.toJson(prodct_details);
         return productJsonString;
     }
 }

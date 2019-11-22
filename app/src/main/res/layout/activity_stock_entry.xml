@@ -68,22 +68,22 @@
 
             </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
 
-        android:layout_margin="20dp"
-        android:textColorHint="@color/input_register_bg"
-        app:boxStrokeColor="@color/input_register_bg"
-        android:hint="@string/branch_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/id_branch_name">
+<!--        android:layout_margin="20dp"-->
+<!--        android:textColorHint="@color/input_register_bg"-->
+<!--        app:boxStrokeColor="@color/input_register_bg"-->
+<!--        android:hint="@string/branch_name"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/id_branch_name">-->
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputEditText>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -114,21 +114,21 @@
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textColorHint="@color/input_register_bg"
-        app:boxStrokeColor="@color/input_register_bg"
-        android:hint="@string/product_status"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/product_status">
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:textColorHint="@color/input_register_bg"-->
+<!--        app:boxStrokeColor="@color/input_register_bg"-->
+<!--        android:hint="@string/product_status"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/product_status">-->
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputEditText>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
@@ -148,29 +148,29 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/date_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:textColor="@color/pink"
-            android:gravity="center"
-            android:text="Date Entered"
-            android:layout_margin="20dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+<!--        <Button-->
+<!--            android:id="@+id/date_picker"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:textColor="@color/pink"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Date Entered"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_centerHorizontal="true"/>-->
 
-        <TextView
-            android:id="@+id/selectedDate"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/btnDate"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="20dp"
-            android:textColor="@color/colorPrimary"
+<!--        <TextView-->
+<!--            android:id="@+id/selectedDate"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_below="@+id/btnDate"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:textColor="@color/colorPrimary"-->
 
-            android:gravity="center"
-            android:textStyle="italic|bold" />
+<!--            android:gravity="center"-->
+<!--            android:textStyle="italic|bold" />-->
     </LinearLayout>
             <Button
                 android:id="@+id/btn_submit"
